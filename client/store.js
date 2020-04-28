@@ -1,19 +1,26 @@
 import { createStore, combineReducers } from "redux";
-import userDataReducer from "./reducers/userDataReducer";
 
-const rootReducer = combineReducers({
-  userDataReducer,
-});
+// Dynamically load all the defined reducers inside of ./reducers folder.
+// No need to manually add a reducer everytime one is introduced
+const reducerModules = require.context(
+  "./reducers/",
+  false,
+  /[a-zA-Z0-9]+.js$/
+);
 
-// When Combining reducers, it doesn't work WHY?
-// const store = createStore(
-//   rootReducer,
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// );
+const allReducers = (requireContext) => {
+  return requireContext.keys().reduce(
+    (reducers, reducer) => ({
+      ...reducers,
+      // Extract of the name of the file as the reducer name without extension
+      [reducer.substr(2).slice(0, -3)]: requireContext(reducer).default,
+    }),
+    {}
+  );
+};
 
-// Using individual reducer works
 const store = createStore(
-  userDataReducer,
+  combineReducers(allReducers(reducerModules)),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
