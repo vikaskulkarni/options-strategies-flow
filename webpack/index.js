@@ -8,7 +8,7 @@ const isProduction = process.env.NODE_ENV === "production";
 const settings = {
   mode: isProduction ? "production" : "development",
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ["*", ".js", ".jsx", ".css", ".scss"],
   },
   context: resolve(__dirname, ".."),
   entry: "./client/index.jsx",

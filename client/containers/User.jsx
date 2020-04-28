@@ -9,11 +9,13 @@ class User extends Component {
         <div>USERS from Redux Store: {this.props.users}</div>
         <div>
           ADD User:
-          <input
+          <button
             type="button"
-            value="ADD"
+            className="btn btn-primary"
             onClick={() => this.props.addUser("user-1")}
-          />
+          >
+            Add User
+          </button>
         </div>
       </Fragment>
     );

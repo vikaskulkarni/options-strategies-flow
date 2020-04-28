@@ -5,7 +5,12 @@ const rules = [
     loader: "babel-loader",
     exclude: /node_modules/,
   },
-  { test: /\.css$/, use: ["style-loader", "css-loader"] },
+  {
+    test: /\.scss$/,
+    use: ["style-loader", "css-loader", "sass-loader"],
+  },
+
+  { test: /\.css$/, use: ["style-loader", "css-loader", "sass-loader"] },
   {
     test: /\.(woff2|woff|ttf|eot|svg)(\?.*$|$)/,
     loader: "file-loader?name=fonts/[name].[ext]",

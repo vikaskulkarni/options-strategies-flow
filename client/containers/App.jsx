@@ -1,9 +1,10 @@
 import React from "react";
 import User from "./User";
+import "./styles.scss";
 
 const App = () => (
-  <div>
-    <h2>Hello React16, Redux7, Webpack4 !</h2>
+  <div className="mainStyle">
+    <h3>Hello React16, Redux7, Webpack4, Bootstrap4, SCSS !</h3>
     <hr />
     <User />
   </div>
