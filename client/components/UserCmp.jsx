@@ -1,8 +1,6 @@
 import React, { Fragment, Component } from "react";
-import { addUser } from "../actions/addUser";
-import { connect } from "react-redux";
 
-class User extends Component {
+class UserCmp extends Component {
   render() {
     return (
       <Fragment>
@@ -22,8 +20,4 @@ class User extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  users: state.userDataReducer.users,
-});
-
-export default connect(mapStateToProps, { addUser })(User);
+export default UserCmp;
