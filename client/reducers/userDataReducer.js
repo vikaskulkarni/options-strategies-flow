@@ -1,8 +1,8 @@
-import { ADD_USER } from "../actions/addUser";
+import { ADD_USER_ASYNC } from "../actions/addUser";
 
 const userDataReducer = (state = { users: [] }, action) => {
   switch (action.type) {
-    case ADD_USER:
+    case ADD_USER_ASYNC:
       return Object.assign({}, state, {
         users: [...state.users, action.user],
       });

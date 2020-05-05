@@ -1,4 +1,8 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+import createSagaMiddleware from "redux-saga";
+import { watchSagas } from "./sagas/saga";
+
+const sagaMiddleware = createSagaMiddleware();
 
 // Dynamically load all the defined reducers inside of ./reducers folder.
 // No need to manually add a reducer everytime one is introduced
@@ -19,9 +23,19 @@ const allReducers = (requireContext) => {
   );
 };
 
+const composeEnhancer =
+  (window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__()) ||
+  compose;
+
 const store = createStore(
   combineReducers(allReducers(reducerModules)),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  compose(
+    applyMiddleware(sagaMiddleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 );
+
+sagaMiddleware.run(watchSagas);
 
 export default store;
