@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-13T07:26:23.572Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="W1uz5ZQ4ctw-ByD9sR9q" version="13.7.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-13T07:30:25.257Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="0XUDJJUeVF5pmdGuh0-6" version="13.7.6" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="2062" dy="1081" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -11,7 +11,7 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="370" y="560" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="260" y="370" />
+              <mxPoint x="260" y="380" />
               <mxPoint x="260" y="560" />
             </Array>
           </mxGeometry>
@@ -19,18 +19,18 @@
         <mxCell id="oInfv-fMDn0yhap7R1GD-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="oInfv-fMDn0yhap7R1GD-0" target="oInfv-fMDn0yhap7R1GD-21">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="220" y="420" />
+              <mxPoint x="220" y="400" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="oInfv-fMDn0yhap7R1GD-0" value="Core Share&lt;br&gt;API" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="80" y="360" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="oInfv-fMDn0yhap7R1GD-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="oInfv-fMDn0yhap7R1GD-1" target="oInfv-fMDn0yhap7R1GD-0">
+        <mxCell id="oInfv-fMDn0yhap7R1GD-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="oInfv-fMDn0yhap7R1GD-1" target="oInfv-fMDn0yhap7R1GD-0">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="300" y="360" />
-              <mxPoint x="300" y="405" />
+              <mxPoint x="400" y="340" />
+              <mxPoint x="200" y="340" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -73,7 +73,7 @@
           <mxGeometry x="260" y="480" width="100" height="10" as="geometry" />
         </mxCell>
         <mxCell id="oInfv-fMDn0yhap7R1GD-17" value="Extract Events from Kafka" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="216" y="410" width="150" height="10" as="geometry" />
+          <mxGeometry x="225" y="345" width="150" height="10" as="geometry" />
         </mxCell>
         <mxCell id="oInfv-fMDn0yhap7R1GD-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.668;entryY=0.995;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="oInfv-fMDn0yhap7R1GD-18" target="oInfv-fMDn0yhap7R1GD-2">
           <mxGeometry relative="1" as="geometry" />
@@ -95,6 +95,9 @@
         </mxCell>
         <mxCell id="oInfv-fMDn0yhap7R1GD-23" value="HTTP Event Collector&lt;br&gt;(HEC)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="320" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oInfv-fMDn0yhap7R1GD-28" value="Send event response to client" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="153" y="450" width="100" height="10" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
