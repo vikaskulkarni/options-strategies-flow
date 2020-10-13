@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-10-13T07:46:41.046Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="9sPkgFAP5nXt5ZHHNbKv" version="13.7.6" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-13T07:47:20.273Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="fC4977AYF7pP1kknr9A_" version="13.7.6" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="2062" dy="1081" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -11,8 +11,8 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="370" y="560" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="260" y="380" />
-              <mxPoint x="260" y="560" />
+              <mxPoint x="250" y="380" />
+              <mxPoint x="250" y="560" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -77,7 +77,7 @@
           <mxGeometry x="630" y="530" width="60" height="80" as="geometry" />
         </mxCell>
         <mxCell id="oInfv-fMDn0yhap7R1GD-7" value="Publish Events to Kafka" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="260" y="375" width="130" height="10" as="geometry" />
+          <mxGeometry x="267" y="373" width="130" height="10" as="geometry" />
         </mxCell>
         <mxCell id="oInfv-fMDn0yhap7R1GD-8" value="Splunk pushes the event log to Splunk DB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="450" y="540" width="150" height="20" as="geometry" />
@@ -95,7 +95,7 @@
           <mxGeometry x="140" y="250" width="140" height="20" as="geometry" />
         </mxCell>
         <mxCell id="oInfv-fMDn0yhap7R1GD-16" value="Core share pushes events to HEC" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="253" y="480" width="120" height="10" as="geometry" />
+          <mxGeometry x="248" y="480" width="120" height="10" as="geometry" />
         </mxCell>
         <mxCell id="oInfv-fMDn0yhap7R1GD-17" value="Extract Events from Kafka" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="225" y="345" width="150" height="10" as="geometry" />
