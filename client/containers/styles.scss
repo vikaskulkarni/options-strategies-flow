@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Monoton");
+
 .mainStyle {
   background: rgb(54, 199, 219);
   background: linear-gradient(
@@ -9,4 +11,157 @@
   width: 800px;
   margin: 0 auto;
   padding: 30px;
+}
+
+html,
+body {
+  letter-spacing: 1px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+
+  color: #292a2a;
+}
+.header a {
+  color: inherit;
+  text-decoration: none;
+}
+.header .navContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px 0 0;
+  margin: 0 auto;
+}
+.logo {
+  font-family: "Avenir Next", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  -webkit-text-stroke-width: 2px;
+  // -webkit-text-stroke-color: rgba(255, 255, 255, 1);
+  transition: 0.3s all;
+
+  // color: rgba(255, 255, 255, 0);
+  // background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
+  background: rgb(180, 183, 187);
+  background: linear-gradient(
+    90deg,
+    rgba(180, 183, 187, 1) 0%,
+    rgba(174, 191, 254, 1) 50%,
+    rgba(195, 153, 153, 1) 100%
+  );
+  box-shadow: 1px 1px 5px 2px black;
+  padding: 0.6em;
+  position: fixed;
+
+  .logo_text {
+    font-size: 24px;
+    font-style: italic;
+    display: inline-block;
+  }
+}
+
+.navToggle {
+  display: block;
+  background-color: transparent;
+  border: none;
+  height: 38px;
+  width: 38px;
+  padding: 8px 8px;
+  margin: 10px -8px 10px 0px;
+  outline: none;
+  cursor: pointer;
+  z-index: 5;
+}
+.navToggle.open span:first-child {
+  transform: rotate(45deg) translate(4.4px, 4.4px);
+}
+.navToggle.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+.navToggle.open span:last-child {
+  transform: rotate(-45deg) translate(4.4px, -4.4px);
+}
+.navToggle span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-bottom: 4px;
+  background-color: #32243c;
+  border-radius: 5px;
+  transition: all 0.3s cubic-bezier(1, 0.13, 0.35, 1.09);
+}
+.navToggle.open span {
+  background: #333;
+}
+
+.navToggle span:last-child {
+  margin-bottom: 0;
+}
+.wrapper {
+  z-index: -1;
+  position: fixed;
+  height: 100vh;
+  // background: linear-gradient(to right, rgb(185, 43, 39), rgb(21, 101, 192));
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.mainNav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100vh;
+  background: rgb(180, 183, 187);
+  background: linear-gradient(
+    90deg,
+    rgba(180, 183, 187, 1) 0%,
+    rgba(174, 191, 254, 1) 50%,
+    rgba(195, 153, 153, 1) 100%
+  );
+  padding: 55px 25px;
+  z-index: 3;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  overflow-y: auto;
+  z-index: 5;
+}
+.mainNav.open {
+  transform: translateX(0%);
+}
+.mainNav .mainNavLink {
+  display: block;
+  padding: 0.71875rem 0;
+  text-transform: capitalize;
+}
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  transition: opacity 1s ease 0.1s;
+}
+.overlay.open {
+  opacity: 3;
+  width: 100%;
+  height: 120%;
 }
