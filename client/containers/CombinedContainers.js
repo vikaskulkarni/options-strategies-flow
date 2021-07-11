@@ -1,21 +1,30 @@
-import { addUser } from "../actions/addUser";
-import { getIP } from "../actions/getIP";
 import { connect } from "react-redux";
-import UserCmp from "../components/UserCmp";
-import IPCmp from "../components/IPCmp";
+import App from "./App";
+import { getInstrumentValues, showIronCondor } from "../actions/instrumentValuesActions";
+import IronCondorShortStrangle from "../components/IronCondorShortStrangle";
 
-export const UserCtr = connect(
-  (state) => ({
-    users: state.userDataReducer.users,
-  }),
-  { addUser }
-)(UserCmp);
 
-export const IPCtr = connect(
+export const AppCtr = connect(
   (state) => ({
-    ipDetails: state.ipReducer.ipDetails,
+    instrumentValues: state.instrumentValuesReducer.instrumentValues,
+    selectedStrategy: state.instrumentValuesReducer.selectedStrategy,
   }),
-  { onGetIP: getIP }
-)(IPCmp);
+  { getInstrumentValues, showIronCondor }
+)(App);
+
+export const IronCondorShortStrangleCtr = connect(
+  (state) => ({
+    instrumentValues: state.instrumentValuesReducer.instrumentValues,
+    peStrike: state.peReducer.peStrike,
+    peHedgelegOffset: state.peReducer.peHedgelegOffset,
+    peExitOffset: state.peReducer.peExitOffset,
+    ceStrike: state.ceReducer.ceStrike,
+    ceHedgelegOffset: state.ceReducer.ceHedgelegOffset,
+    ceExitOffset: state.ceReducer.ceExitOffset,
+    strategy: state.instrumentValuesReducer.selectedStrategy
+  }),
+  { getInstrumentValues }
+)(IronCondorShortStrangle);
+
 
 // THIS FILE CAN BE USED TO DEFINE ALL THE DISPLAY CONTAINERS THAT WRAPS THE COMPONENTS

@@ -1,5 +1,40 @@
 @import url("https://fonts.googleapis.com/css?family=Monoton");
 
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+// Column generator
+@mixin colmk($numRows, $margin) {
+  width: ((100% - (($numRows - 1) * $margin)) / $numRows);
+
+  &:nth-child(n) {
+    margin-right: $margin;
+    margin-bottom: $margin;
+  }
+
+  &:nth-child(#{$numRows}n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+$btn_teal: #009688;
+$btn_cyan: #00bcd4;
+
 .mainStyle {
   background: rgb(54, 199, 219);
   background: linear-gradient(
@@ -45,29 +80,23 @@ li {
   margin: 0 auto;
 }
 .logo {
-  font-family: "Avenir Next", sans-serif;
+  width: 430px;
+  z-index: 1;
   font-size: 14px;
   text-transform: uppercase;
-
   -webkit-text-stroke-width: 2px;
-  // -webkit-text-stroke-color: rgba(255, 255, 255, 1);
   transition: 0.3s all;
 
-  // color: rgba(255, 255, 255, 0);
-  // background: linear-gradient(to right, rgb(15, 32, 39), rgb(32, 58, 67), rgb(44, 83, 100));
-  background: rgb(180, 183, 187);
-  background: linear-gradient(
-    90deg,
-    rgba(180, 183, 187, 1) 0%,
-    rgba(174, 191, 254, 1) 50%,
-    rgba(195, 153, 153, 1) 100%
-  );
-  box-shadow: 1px 1px 5px 2px black;
   padding: 0.6em;
+  margin: 0.3em;
   position: fixed;
 
+  border: solid 3px hsla(0, 95%, 35%, 1);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  background: hsla(67, 95%, 95%, 1);
+
   .logo_text {
-    font-size: 24px;
+    font-size: 20px;
     font-style: italic;
     display: inline-block;
   }
@@ -80,7 +109,7 @@ li {
   height: 38px;
   width: 38px;
   padding: 8px 8px;
-  margin: 10px -8px 10px 0px;
+  margin: 15px;
   outline: none;
   cursor: pointer;
   z-index: 5;
@@ -116,7 +145,6 @@ li {
   z-index: -1;
   position: fixed;
   height: 100vh;
-  // background: linear-gradient(to right, rgb(185, 43, 39), rgb(21, 101, 192));
   width: 100%;
   left: 0;
   right: 0;
@@ -125,22 +153,24 @@ li {
 .mainNav {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 5px;
   width: 350px;
-  height: 100vh;
-  background: rgb(180, 183, 187);
-  background: linear-gradient(
-    90deg,
-    rgba(180, 183, 187, 1) 0%,
-    rgba(174, 191, 254, 1) 50%,
-    rgba(195, 153, 153, 1) 100%
-  );
+
   padding: 55px 25px;
+  margin: 0.5rem;
   z-index: 3;
   transform: translateX(100%);
   transition: transform 0.25s ease;
   overflow-y: auto;
   z-index: 5;
+
+  border: solid 4px hsla(0, 95%, 35%, 1);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  background: hsla(67, 95%, 95%, 1);
+
+  li {
+    margin-bottom: 1rem;
+  }
 }
 .mainNav.open {
   transform: translateX(0%);
@@ -164,4 +194,126 @@ li {
   opacity: 3;
   width: 100%;
   height: 120%;
+}
+
+.rkmd-btn {
+  padding: 0.5rem;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.225);
+  }
+
+  &.btn-teal {
+    color: #fff;
+    background-color: $btn_teal;
+    &:hover {
+      background-color: lighten($btn_teal, 8%);
+    }
+  }
+
+  &.btn-cyan {
+    color: #fff;
+    background-color: $btn_cyan;
+    &:hover {
+      background-color: lighten($btn_cyan, 8%);
+    }
+  }
+
+  &.disabled:not(.btn-flat),
+  &[disabled]:not(.btn-flat) {
+    background-color: #cdcdcd !important;
+    &:hover {
+      background-color: #cdcdcd !important;
+    }
+  }
+
+  &.btn-flat {
+    box-shadow: none !important;
+    // background-color: transparent !important;
+    background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+    &:hover {
+      // background-color: #cecece !important;
+      background-image: linear-gradient(
+        to top,
+        #f3e7e9 0%,
+        #e3eeff 99%,
+        #e3eeff 100%
+      );
+      box-shadow: none !important;
+    }
+
+    &.disabled:hover,
+    &[disabled]:hover {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.ripple-effect {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  vertical-align: middle;
+  user-select: none;
+  z-index: 1;
+
+  .ripple {
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(0);
+    pointer-events: none;
+  }
+
+  &.ripple-teal {
+    .ripple {
+      background: rgba(0, 150, 136, 0.725) !important;
+    }
+  }
+
+  .animated {
+    animation: ripple 0.6s linear;
+  }
+
+  @include keyframes("ripple") {
+    100% {
+      opacity: 0;
+      transform: scale(2.5);
+    }
+  }
+}
+
+.bodyText {
+  margin: 5px;
+  top: 60%;
+  position: relative;
+  color: black;
+  font-size: 60px;
+
+  &:before {
+    position: absolute;
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+    content: attr(data-text);
+    left: -2px;
+    top: -2px;
+    @supports not (-webkit-text-stroke: 1px black) {
+      z-index: -1;
+      color: white;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
+    }
+  }
 }
