@@ -1,5 +1,5 @@
 package-lock.json
-.history
-node_modules
-.DS_Store
-dist
+.history/**
+node_modules/**
+.DS_Store/**
+dist/**

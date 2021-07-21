@@ -28,7 +28,7 @@ export function* genInstrumentValuesGet(payload) {
         // const resourcesResponse = yield call(request, RESOURCES_API, {
         //     method: "GET",
         // });
-        yield put(getInstrumentValuesSuccess({ bnfty: 34800, nfty: 15800 } || {}));
+        yield put(getInstrumentValuesSuccess({ bnfty: 34839, nfty: 15856 } || {}));
     } catch (err) {
         yield put(getInstrumentValuesFail(err));
     }

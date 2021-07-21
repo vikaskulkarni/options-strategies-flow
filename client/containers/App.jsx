@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { IronCondorShortStrangleCtr } from "./CombinedContainers";
+import { CounterShortStraddleCtr, IronCondorShortStrangleCtr } from "./CombinedContainers";
 import "./styles.scss";
 
 const App = (props) => {
@@ -17,6 +17,7 @@ const App = (props) => {
   const getSelectedStrategy = () => {
     switch (selectedStrategy) {
       case "bnIronCondor": return <IronCondorShortStrangleCtr instrumentType="bnfty" />;
+      case "counterShortStraddle": return <CounterShortStraddleCtr />;
       case "nIronCondor": return <IronCondorShortStrangleCtr instrumentType="nfty" />;
       case "NONE": return <div><h1 data-text="Select a Strategy from the Menu" className="bodyText">Select a Strategy from the Menu</h1></div>
     }
