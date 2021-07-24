@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { CounterShortStraddleCtr, IronCondorShortStrangleCtr } from "./CombinedContainers";
+import {
+  CounterShortStraddleCtr,
+  IronCondorShortStrangleCtr,
+} from "./CombinedContainers";
+import AutoCombo from "../components/AutoCombo";
 import "./styles.scss";
+import DisclaimerButton from "../components/DisclaimerButton";
+
+const strategyValues = [
+  { title: "Iron Condor", id: "ironCondor" },
+  { title: "Counter - Short Straddle", id: "counterShortStraddle" },
+];
 
 const App = (props) => {
-  const { instrumentValues, selectedStrategy, getInstrumentValues, showIronCondor } = props;
+  const {
+    instrumentValues,
+    selectedStrategy,
+    selectedInstrument,
+    getInstrumentValues,
+    showStrategy,
+  } = props;
 
   useEffect(() => {
     getInstrumentValues();
@@ -16,12 +32,27 @@ const App = (props) => {
 
   const getSelectedStrategy = () => {
     switch (selectedStrategy) {
-      case "bnIronCondor": return <IronCondorShortStrangleCtr instrumentType="bnfty" />;
-      case "counterShortStraddle": return <CounterShortStraddleCtr />;
-      case "nIronCondor": return <IronCondorShortStrangleCtr instrumentType="nfty" />;
-      case "NONE": return <div><h1 data-text="Select a Strategy from the Menu" className="bodyText">Select a Strategy from the Menu</h1></div>
+      case "ironCondor":
+        return (
+          <IronCondorShortStrangleCtr instrumentType={selectedInstrument} />
+        );
+      case "counterShortStraddle":
+        return <CounterShortStraddleCtr />;
+      case "nIronCondor":
+        return <IronCondorShortStrangleCtr instrumentType="nfty" />;
+      case "NONE":
+        return (
+          <div>
+            <h1
+              data-text="Select a Strategy from the Menu"
+              className="bodyText"
+            >
+              Select a Strategy from the Menu
+            </h1>
+          </div>
+        );
     }
-  }
+  };
 
   return (
     <div>
@@ -45,7 +76,12 @@ const App = (props) => {
                 </li>
 
                 <li>
-                  <div style={{ textAlign: "center" }}>Create Default<button className="rkmd-btn btn-flat ripple-effect" onClick={() => showIronCondor("bnIronCondor")}>[BNFTY] IRON CONDOR</button></div>
+                  <AutoCombo
+                    strategyValues={strategyValues}
+                    label="Create Default Strategy"
+                    showStrategy={showStrategy}
+                    instrumentType="bnfty"
+                  />
                 </li>
 
                 <li>
@@ -53,9 +89,13 @@ const App = (props) => {
                 </li>
 
                 <li>
-                  <div style={{ textAlign: "center" }}>Create Default<button className="rkmd-btn btn-flat ripple-effect" onClick={() => showIronCondor("nIronCondor")}>[NFTY] IRON CONDOR</button></div>
+                  <AutoCombo
+                    strategyValues={strategyValues}
+                    label="Create Default Strategy"
+                    showStrategy={showStrategy}
+                    instrumentType="nfty"
+                  />
                 </li>
-
               </ul>
             </nav>
 
@@ -74,6 +114,8 @@ const App = (props) => {
           </div>
         </header>
         <div className="wrapper"></div>
+        
+        <DisclaimerButton />
       </div>
     </div>
   );

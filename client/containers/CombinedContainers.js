@@ -1,16 +1,19 @@
 import { connect } from "react-redux";
 import App from "./App";
-import { getInstrumentValues, showIronCondor } from "../actions/instrumentValuesActions";
+import {
+  getInstrumentValues,
+  showStrategy,
+} from "../actions/instrumentValuesActions";
 import IronCondorShortStrangle from "../components/IronCondorShortStrangle";
 import CounterShortStraddle from "../components/CounterShortStraddle";
-
 
 export const AppCtr = connect(
   (state) => ({
     instrumentValues: state.instrumentValuesReducer.instrumentValues,
     selectedStrategy: state.instrumentValuesReducer.selectedStrategy,
+    selectedInstrument: state.instrumentValuesReducer.selectedInstrument,
   }),
-  { getInstrumentValues, showIronCondor }
+  { getInstrumentValues, showStrategy }
 )(App);
 
 export const IronCondorShortStrangleCtr = connect(
@@ -22,7 +25,7 @@ export const IronCondorShortStrangleCtr = connect(
     ceStrike: state.ceReducer.ceStrike,
     ceHedgelegOffset: state.ceReducer.ceHedgelegOffset,
     ceExitOffset: state.ceReducer.ceExitOffset,
-    strategy: state.instrumentValuesReducer.selectedStrategy
+    strategy: state.instrumentValuesReducer.selectedStrategy,
   }),
   { getInstrumentValues }
 )(IronCondorShortStrangle);
@@ -32,10 +35,9 @@ export const CounterShortStraddleCtr = connect(
     instrumentValues: state.instrumentValuesReducer.instrumentValues,
     strikePrice: state.counterShortStraddleReducer.strikePrice,
     stopLossPercent: state.counterShortStraddleReducer.stopLossPercent,
-    strategy: state.instrumentValuesReducer.selectedStrategy
+    strategy: state.instrumentValuesReducer.selectedStrategy,
   }),
   { getInstrumentValues }
 )(CounterShortStraddle);
-
 
 // THIS FILE CAN BE USED TO DEFINE ALL THE DISPLAY CONTAINERS THAT WRAPS THE COMPONENTS

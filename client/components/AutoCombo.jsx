@@ -6,17 +6,17 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 export default function AutoCombo(props) {
   return (
     <Autocomplete
-      id="combo-box-demo"
-      options={dropdownValues}
+      id={props.instrumentType}
+      options={props.strategyValues}
       getOptionLabel={(option) => option.title}
       style={{}}
       renderInput={(params) => (
         <TextField {...params} label={props.label} variant="outlined" />
       )}
+      onChange={(event, newValue) => {
+        props.showStrategy(newValue.id, props.instrumentType);
+        console.log(newValue);
+      }}
     />
   );
 }
-
-const dropdownValues = [
-
-];
