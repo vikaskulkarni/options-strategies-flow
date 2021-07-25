@@ -1,5 +1,5 @@
-# my-react16-redux4-webpack4-template
-Simple template for React-Redux projects
+# options-strategies-flow
+Flows for different Options Strategies
 
 In Development mode
 ```
