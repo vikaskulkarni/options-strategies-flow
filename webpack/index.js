@@ -15,7 +15,7 @@ const settings = {
   entry: "./client/index.jsx",
   output: {
     filename: "[name].js",
-    path: resolve(__dirname, "..", "dist"),
+    path: resolve(__dirname, "..", "build"),
   },
   optimization: !isProduction
     ? { minimize: false }

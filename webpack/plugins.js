@@ -3,13 +3,13 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const isProduction = process.env.NODE_ENV === "production";
-const dist = "dist";
+const build = "build";
 const cleanOptions = {
   root: resolve(__dirname, ".."),
-  exclude: [`${dist}/.gitignore`],
+  exclude: [`${build}/.gitignore`],
   verbose: true,
   cleanStaleWebpackAssets: true,
-  cleanOnceBeforeBuildPatterns: [`${dist}/*.*`],
+  cleanOnceBeforeBuildPatterns: [`${build}/*.*`],
   dry: false,
 };
 const plugins = [

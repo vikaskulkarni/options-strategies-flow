@@ -14,7 +14,7 @@ const strategyValues = [
 ];
 
 const App = (props) => {
-  const [showSuggestionBox, setShowSuggestionBox] = useState(true);
+  const [showSuggestionBox, setShowSuggestionBox] = useState(false);
   const onClick = () => setShowSuggestionBox(!showSuggestionBox);
 
   const {

@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "http://vikaskulkarni.github.io/options-strategies-flow",
   "scripts": {
     "build": "NODE_ENV=production webpack",
-    "start": "NODE_ENV=production webpack; cd dist/ && http-server",
+    "start": "NODE_ENV=production webpack; cd build/ && http-server",
     "start-dev": "NODE_ENV=development webpack-dev-server --inline",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "Vikas Kulkarni",
@@ -33,6 +35,7 @@
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^4.2.0",
     "node-sass": "^4.14.0",
     "sass-loader": "^8.0.2",
