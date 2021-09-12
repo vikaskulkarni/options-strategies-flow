@@ -2,7 +2,7 @@
 
 Flows for different Options Strategies
 
-In Development mode
+# Running in Development mode
 
 ```
 npm install
