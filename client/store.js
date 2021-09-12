@@ -23,18 +23,26 @@ const allReducers = (requireContext) => {
   );
 };
 
-const composeEnhancer =
-  (window.__REDUX_DEVTOOLS_EXTENSION__ &&
-    window.__REDUX_DEVTOOLS_EXTENSION__()) ||
-  compose;
+let store;
 
-const store = createStore(
-  combineReducers(allReducers(reducerModules)),
-  compose(
-    applyMiddleware(sagaMiddleware),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-);
+if (
+  (!process.env.NODE_ENV || process.env.NODE_ENV === "development") &&
+  window.navigator.userAgent.includes("Chrome")
+) {
+  store = createStore(
+    combineReducers(allReducers(reducerModules)),
+    compose(
+      applyMiddleware(sagaMiddleware),
+      window.__REDUX_DEVTOOLS_EXTENSION__ &&
+        window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
+  );
+} else {
+  store = createStore(
+    combineReducers(allReducers(reducerModules)),
+    applyMiddleware(sagaMiddleware)
+  );
+}
 
 sagaMiddleware.run(watchSagas);
 
