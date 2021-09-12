@@ -6,6 +6,7 @@ import {
 import AutoCombo from "../components/AutoCombo";
 import "./styles.scss";
 import DisclaimerButton from "../components/DisclaimerButton";
+import SuggestionBox from "../components/SuggestionBox";
 
 const strategyValues = [
   { title: "Iron Condor", id: "ironCondor" },
@@ -13,6 +14,9 @@ const strategyValues = [
 ];
 
 const App = (props) => {
+  const [showSuggestionBox, setShowSuggestionBox] = useState(true);
+  const onClick = () => setShowSuggestionBox(!showSuggestionBox);
+
   const {
     instrumentValues,
     selectedStrategy,
@@ -37,9 +41,11 @@ const App = (props) => {
           <IronCondorShortStrangleCtr instrumentType={selectedInstrument} />
         );
       case "counterShortStraddle":
-        return <CounterShortStraddleCtr />;
+        return <CounterShortStraddleCtr instrumentType={selectedInstrument} />;
       case "nIronCondor":
-        return <IronCondorShortStrangleCtr instrumentType="nfty" />;
+        return (
+          <IronCondorShortStrangleCtr instrumentType={selectedInstrument} />
+        );
       case "NONE":
         return (
           <div>
@@ -83,7 +89,6 @@ const App = (props) => {
                     instrumentType="bnfty"
                   />
                 </li>
-
                 <li>
                   NIFTY Spot: <strong>{instrumentValues.nfty}</strong>
                 </li>
@@ -113,9 +118,14 @@ const App = (props) => {
             />
           </div>
         </header>
-        <div className="wrapper"></div>
-        
+        <div className="wrapper" style={{ zIndex: "6" }}>
+          {showSuggestionBox ? <SuggestionBox onClick={onClick} /> : null}
+        </div>
+
         <DisclaimerButton />
+        <a href="#" className="float-comments" onClick={onClick}>
+          <i className="fa fa-comments"></i>
+        </a>
       </div>
     </div>
   );

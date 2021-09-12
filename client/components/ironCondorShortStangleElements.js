@@ -1,6 +1,14 @@
 import React from "react";
 
-let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peHedgelegOffset, ceHedgelegOffset, peExitOffset, ceExitOffset) => {
+let getIronCondorShortStangleElements = (
+  instrumentSpot,
+  peStrike,
+  ceStrike,
+  peHedgelegOffset,
+  ceHedgelegOffset,
+  peExitOffset,
+  ceExitOffset
+) => {
   const chartObject = [
     {
       id: "999",
@@ -67,7 +75,7 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
         color: "#333",
         border: "1px solid #2a2a33",
         outline: "4px inset #b5b5bb",
-        outlineOffset: "-4px"
+        outlineOffset: "-4px",
       },
     },
     {
@@ -84,9 +92,9 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
         background: "#c39999",
         color: "#333",
         border: "1px solid #4a0000",
-        width: "90px",
+        width: "95px",
         outline: "4px inset #c39999",
-        outlineOffset: "-4px"
+        outlineOffset: "-4px",
       },
     },
 
@@ -95,7 +103,10 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
       data: {
         label: (
           <>
-            SPOT <strong>{">="} {ceStrike}</strong>
+            SPOT{" "}
+            <strong>
+              {">="} {ceStrike}
+            </strong>
           </>
         ),
       },
@@ -147,7 +158,9 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
       source: "5",
       target: "7",
       type: "smoothstep",
-      label: `(${peStrike} + ${ceStrike})/2=${Math.round((peStrike + ceStrike) / 2)}`,
+      label: `(${peStrike} + ${ceStrike})/2=${Math.round(
+        (peStrike + ceStrike) / 2
+      )}`,
     },
     {
       id: "6",
@@ -164,7 +177,7 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
         color: "#333",
         border: "1px solid #4a0000",
         outline: "4px inset #c39999",
-        outlineOffset: "-4px"
+        outlineOffset: "-4px",
       },
     },
     {
@@ -182,7 +195,7 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
         color: "#333",
         border: "1px solid #2a2a33",
         outline: "4px inset #b5b5bb",
-        outlineOffset: "-4px"
+        outlineOffset: "-4px",
       },
     },
     {
@@ -260,7 +273,7 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
         color: "#333",
         border: "1px solid #4a0000",
         outline: "4px inset #c39999",
-        outlineOffset: "-4px"
+        outlineOffset: "-4px",
       },
     },
     {
@@ -278,7 +291,7 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
         color: "#333",
         border: "1px solid #2a2a33",
         outline: "4px inset #b5b5bb",
-        outlineOffset: "-4px"
+        outlineOffset: "-4px",
       },
     },
     {
@@ -332,12 +345,11 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
     {
       id: "2",
       data: {
-        label:
-          (
-            <>
-              PE <strong>{peStrike}</strong>
-            </>
-          ),
+        label: (
+          <>
+            PE <strong>{peStrike}</strong>
+          </>
+        ),
       },
       position: { x: 0, y: 100 },
       style: {
@@ -345,7 +357,7 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
         color: "#333",
         border: "1px solid #4a0000",
         outline: "4px inset #c39999",
-        outlineOffset: "-4px"
+        outlineOffset: "-4px",
       },
     },
     {
@@ -353,7 +365,7 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
       data: {
         label: (
           <>
-            PE <strong>{(peStrike - peHedgelegOffset)}</strong>
+            PE <strong>{peStrike - peHedgelegOffset}</strong>
           </>
         ),
       },
@@ -364,7 +376,7 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
         border: "1px solid #2a2a33",
         width: "90px",
         outline: "4px inset #b5b5bb",
-        outlineOffset: "-4px"
+        outlineOffset: "-4px",
       },
     },
     {
@@ -372,7 +384,11 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
       data: {
         label: (
           <>
-            SPOT <strong>{"<="}{peStrike}</strong>
+            SPOT{" "}
+            <strong>
+              {"<="}
+              {peStrike}
+            </strong>
           </>
         ),
       },
@@ -424,7 +440,9 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
       source: "55",
       target: "77",
       type: "smoothstep",
-      label: `(${peStrike} + ${ceStrike})/2=${Math.round((peStrike + ceStrike) / 2)}`,
+      label: `(${peStrike} + ${ceStrike})/2=${Math.round(
+        (peStrike + ceStrike) / 2
+      )}`,
     },
     {
       id: "66",
@@ -441,7 +459,7 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
         color: "#333",
         border: "1px solid #4a0000",
         outline: "4px inset #c39999",
-        outlineOffset: "-4px"
+        outlineOffset: "-4px",
       },
     },
     {
@@ -459,7 +477,7 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
         color: "#333",
         border: "1px solid #2a2a33",
         outline: "4px inset #b5b5bb",
-        outlineOffset: "-4px"
+        outlineOffset: "-4px",
       },
     },
     {
@@ -537,7 +555,7 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
         color: "#333",
         border: "1px solid #4a0000",
         outline: "4px inset #c39999",
-        outlineOffset: "-4px"
+        outlineOffset: "-4px",
       },
     },
     {
@@ -555,7 +573,7 @@ let getIronCondorShortStangleElements = (instrumentSpot, peStrike, ceStrike, peH
         color: "#333",
         border: "1px solid #2a2a33",
         outline: "4px inset #b5b5bb",
-        outlineOffset: "-4px"
+        outlineOffset: "-4px",
       },
     },
     {

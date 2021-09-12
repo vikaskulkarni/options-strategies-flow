@@ -25,10 +25,20 @@ const getInstrumentValuesFail = (error) => ({
 export function* genInstrumentValuesGet(payload) {
   console.log();
   try {
+    // const RESOURCES_API =
+    //   "https://www1.nseindia.com/live_market/dynaContent/live_watch/stock_watch/liveIndexWatchData.json";
     // const resourcesResponse = yield call(request, RESOURCES_API, {
-    //     method: "GET",
+    //   method: "GET",
+    //   mode: "no-cors",
     // });
-    yield put(getInstrumentValuesSuccess({ bnfty: 34839, nfty: 15856 } || {}));
+    yield put(
+      getInstrumentValuesSuccess(
+        {
+          bnfty: 36683,
+          nfty: 17369,
+        } || {}
+      )
+    );
   } catch (err) {
     yield put(getInstrumentValuesFail(err));
   }

@@ -9,13 +9,11 @@ export default function AutoCombo(props) {
       id={props.instrumentType}
       options={props.strategyValues}
       getOptionLabel={(option) => option.title}
-      style={{}}
       renderInput={(params) => (
         <TextField {...params} label={props.label} variant="outlined" />
       )}
       onChange={(event, newValue) => {
         props.showStrategy(newValue.id, props.instrumentType);
-        console.log(newValue);
       }}
     />
   );
